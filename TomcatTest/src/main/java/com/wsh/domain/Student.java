@@ -5,6 +5,7 @@ public class Student {
     private String age;
     private String gender;
     private String host;
+    private String host1;
 
     public Student() {
     }
