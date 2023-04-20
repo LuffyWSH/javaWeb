@@ -9,6 +9,7 @@ public class Student {
     private String host;
     private String host1;
     private String pull;
+    private String push;
 
     public Student() {
     }
