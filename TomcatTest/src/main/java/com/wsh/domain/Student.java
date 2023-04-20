@@ -8,6 +8,7 @@ public class Student {
     private String main2;
     private String host;
     private String host1;
+    private String pull;
 
     public Student() {
     }
