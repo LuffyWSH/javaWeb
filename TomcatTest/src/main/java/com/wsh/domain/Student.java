@@ -6,6 +6,8 @@ public class Student {
     private String gender;
     private String main;
     private String main2;
+    private String host;
+    private String host1;
 
     public Student() {
     }
