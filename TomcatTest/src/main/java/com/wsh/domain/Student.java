@@ -3,6 +3,7 @@ package com.wsh.domain;
 public class Student {
     private String name;
     private String age;
+    private String gender;
 
     public Student() {
     }
@@ -43,6 +44,9 @@ public class Student {
     public void setAge(String age) {
         this.age = age;
     }
+
+
+
 
     public String toString() {
         return "Student{name = " + name + ", age = " + age + "}";
