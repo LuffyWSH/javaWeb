@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>换验证码</title>
+    <script>
+        window.onload=function (){
+            //给图片绑定单击事件
+            var elementById = document.getElementById("imag");
+            elementById.onclick=fun;
+             function fun(){
+                //得到时间戳，拼接在路径后面，因为图片在本地有缓冲，所以路径要变化
+                var date = new Date();
+                var time = date.getTime();
+                //给元素改变属性
+                document.getElementById("imag").setAttribute("src","/JavaWebTest/Servlet_Response4?"+time)
+             }
+
+            //给超链接绑定单击事件
+            var element = document.getElementById("change");
+            element.onclick=function (){
+                fun();
+            }
+        }
+    </script>
+</head>
+<body>
+<img id="imag" src="/JavaWebTest/Servlet_Response4" alt="">
+<a id="change" href="#">点我改变验证码</a>
+</body>
+</html>

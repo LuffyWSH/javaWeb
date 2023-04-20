@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON3遍历</title>
+</head>
+<script>
+    //1、基本json
+    /*var test={"name":"wsh","age":23}
+    //遍历
+    for(var key in test){
+        document.write(key+":"+test[key])
+    }*/
+
+    //2、嵌套JSON
+    var students={
+    "persons":[
+                {"name":"wsh1","age":23},
+                {"name":"wsh2","age":24},
+                {"name":"wsh3","age":25}
+               ]
+    };
+    //遍历
+    for(var key in students){
+        //先遍历数组
+        for (var i = 0; i < key.length; i++) {
+            //获得数组中每一个JSON对象
+            var p =  key[i];
+            //遍历JSON
+            for(var k in p){
+                document.write(k+":"+p[k])
+            }
+        }
+    }
+    //3、嵌套JSON
+    var ps=[
+        {"name":"wsh1","age":23},
+        {"name":"wsh2","age":24},
+        {"name":"wsh3","age":25}
+    ];
+    //遍历
+    //先遍历数组
+    /*for (var i = 0; i < ps.length; i++) {
+        //获得数组中每一个JSON对象
+        var p =  ps[i];
+        //遍历JSON
+        for(var key in p){
+            document.write(key+":"+p[key])
+        }
+    }*/
+</script>
+<body>
+
+</body>
+</html>

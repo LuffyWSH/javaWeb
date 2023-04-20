@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        //入口函数
+        $(function (){
+            //绑定事件
+            /*
+            //绑定点击事件
+            $("#name").click(function (){
+                alert("aaa")
+            })
+
+            //绑定鼠标事件
+            $("#name").mouseleave(function (){
+                alert("bbb")
+            })
+
+            $("#name").mouseenter(function (){
+                alert("ccc")
+            })
+            */
+
+            //可以用链式编程（但是不建议，阅读性差）
+            /*
+            $("#name").mouseenter(function (){
+                alert("ccc")
+            }).mouseleave(function (){
+                alert("bbb")
+            })
+            */
+
+            //如果调用事件方法，不传递回调函数，则会触发浏览器默认行为。
+            //例如焦点事件
+            alert("aaa");
+            $("#name").focus();//让文本输入框获得焦点
+        })
+
+
+    </script>
+</head>
+<body>
+<input id="name" type="text" value="绑定点击事件">
+</body>
+</html>

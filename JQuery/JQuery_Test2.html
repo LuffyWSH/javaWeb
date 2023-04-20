@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery对象和js对象转换</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+<div id="div1">div1.....</div>
+<div id="div2">div2.....</div>
+
+<script>
+    /*
+    //使用js
+    var tagName = document.getElementsByTagName("div");
+    alert(tagName) //[object HTMLCollection]
+      //改变内容
+    for (let i = 0; i < tagName.length; i++) {
+        tagName[i].innerHTML="aaa";
+    }
+    //使用JQuery
+    var $div = $("div");
+    alert($div) //[object Object]
+    $div.html("bbb");
+*/
+
+
+    //JQuery对象和js对象转换
+    //jq  ->   js   方法：jq对象[索引] 或者  jq对象.get(索引)
+    var $div = $("div");
+    $div[0].innerHTML="ddd";
+    $div.get(1).innerHTML="eee";
+
+    //js  ->   jq   方法：$(js对象)
+    var tagName = document.getElementsByTagName("div");
+    for (let i = 0; i < tagName.length; i++) {
+        $(tagName[i]).html("ccc")
+    }
+</script>
+</body>
+</html>

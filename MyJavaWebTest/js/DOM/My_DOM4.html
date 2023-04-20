@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格添加删除数据</title>
+    <style>
+        table{
+            border: 1px solid;
+            margin: auto;
+            width: 500px;
+        }
+
+        td,th{
+            text-align: center;
+            border: 1px solid;
+        }
+        div{
+            text-align: center;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <form >
+    <input type="text" id="id" placeholder="请输入编号">
+    <input type="text" id="name" placeholder="请输入姓名">
+    <input type="text" id="gender" placeholder="请输入性别">
+    <input type="button" value="添加" id="add">
+    </form>
+</div>
+<table id="table">
+    <caption>学生信息表</caption>
+    <tr>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>操作</th>
+    </tr>
+
+    <tr>
+        <td>1</td>
+        <td>令狐冲</td>
+        <td>男</td>
+        <td><a href="javascript:void(0);" onclick="delTr(this);">删除</a></td>
+    </tr>
+
+    <tr>
+        <td>2</td>
+        <td>任我行</td>
+        <td>男</td>
+        <td><a href="javascript:void(0);"  onclick="delTr(this);">删除</a></td>
+    </tr>
+
+    <tr>
+        <td>3</td>
+        <td>岳不群</td>
+        <td>?</td>
+        <td><a href="javascript:void(0);"  onclick="delTr(this);">删除</a></td>
+    </tr>
+</table>
+</body>
+<script>
+    //获取添加文本内容
+    var element_add = document.getElementById("add");
+    //绑定事件
+    element_add.onclick=fun_add2;
+    //获取表格元素
+    var element_table = document.getElementById("table");
+
+    //在表格中添加元素
+    function fun_add(){
+        //获取表单中内容
+        var id = document.getElementById("id").value;
+        var name = document.getElementById("name").value;
+        var gender = document.getElementById("gender").value;
+
+        //创建节点
+        var add_tr = document.createElement("tr");
+        var add_td1 = document.createElement("td");
+        var add_td2 = document.createElement("td");
+        var add_td3 = document.createElement("td");
+        var add_td4 = document.createElement("td");
+        var add_a = document.createElement("a");
+        //给节点a添加属性
+        add_a.setAttribute("href","javascript:void(0);");
+        add_a.setAttribute("onclick","delTr(this);");
+        //给节点赋值
+        add_td1.innerHTML=id;
+        add_td2.innerHTML=name;
+        add_td3.innerHTML=gender;
+        add_a.innerHTML="删除";
+        //添加节点
+        add_td4.appendChild(add_a);
+        add_tr.appendChild(add_td1);
+        add_tr.appendChild(add_td2);
+        add_tr.appendChild(add_td3);
+        add_tr.appendChild(add_td4);
+        element_table.appendChild(add_tr);
+    }
+
+    //改良后的添加函数
+    function fun_add2(){
+        //获取表单中内容
+        var id = document.getElementById("id").value;
+        var name = document.getElementById("name").value;
+        var gender = document.getElementById("gender").value;
+        //修改html
+        element_table.innerHTML += "<tr>\n" +
+            "        <td>"+id+"</td>\n" +
+            "        <td>"+name+"</td>\n" +
+            "        <td>"+gender +"</td>\n" +
+            "        <td><a href=\"javascript:void(0);\"  onclick=\"delTr(this);\">删除</a></td>\n" +
+            "    </tr>"
+    }
+
+    //在表格中删除元素
+    function delTr(child){
+        var table = child.parentNode.parentNode.parentNode;
+        var tr = child.parentNode.parentNode;
+        table.removeChild(tr);
+    }
+
+</script>
+</html>

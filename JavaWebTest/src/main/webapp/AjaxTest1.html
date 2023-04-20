@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>利用jQuery实现ajax</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        //定义方法
+        function fun(){
+            //使用$.ajax()发生请求
+            $.ajax({
+                url:"/JavaWebTest/Servlet_ajax",
+                type:"post",
+                data:{"username":"wsh","age":23},
+                success:function (data){
+                    alert(data);
+                },
+                error:function (){
+                    alert("出错了....")
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<input type="button" value="发送异步请求" onclick="fun();">
+<input type="text">
+</body>
+</html>

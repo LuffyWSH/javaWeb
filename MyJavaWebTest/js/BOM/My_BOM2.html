@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Window窗口对象</title>
+</head>
+<body>
+<!--<input type="button" name="button1" value="打开按钮" id="open">
+<input type="button" name="button2" value="关闭按钮" id="close">-->
+
+</body>
+<script>
+    /*
+    //1、与弹框有关方法
+    alert("aaa");
+    confirm("是否退出");
+    prompt("请输入你的姓名");
+    */
+
+    /*
+    //2、与关闭窗口方法
+    var open_element = document.getElementById("open");
+    var close_element = document.getElementById("close");
+    var new_window;
+    open_element.onclick=fun1;
+    close_element.onclick=fun2;
+
+    function fun1(){
+        new_window = open();
+    }
+    function fun2(){
+        new_window.close();
+    }
+*/
+
+    //3、与定时器有关的方式
+      //设置定时器
+    let timeout = setTimeout(fun,2000);
+    function fun(){
+        alert("你好");
+    }
+    //关闭定时器
+    clearTimeout(timeout);
+
+    //每隔多次事件执行任务
+    let interval = setInterval(fun1,2000);
+    function fun1(){
+        alert("我是定时器");
+    }
+    clearInterval(interval);
+
+</script>
+</html>

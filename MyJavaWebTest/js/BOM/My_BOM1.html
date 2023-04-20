@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>灯泡开关</title>
+</head>
+<body>
+<img src="../../image/img1/off.gif" id="light">
+
+<script>
+    //获取元素对象
+    var light = document.getElementById("light");
+    var flag = false;  //灭
+    //绑定事件
+    light.onclick=fun;
+
+    //定义函数
+    function fun(){
+        if(flag){ //开
+            light.src="../../image/img1/off.gif";
+            flag=false;
+        }else {//关
+            light.src="../../image/img1/on.gif";
+            flag=true;
+        }
+    }
+</script>
+</body>
+</html>

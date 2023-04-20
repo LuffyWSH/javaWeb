@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Node节点对象</title>
+    <style>
+        div{
+            border: 1px red solid;
+        }
+        #div1{
+            width:300px;
+            height: 80px;
+        }
+        #div2{
+            width:200px;
+            height: 40px;
+        }
+        #div3{
+            width:100px;
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    <div id="div2">
+        我是div2
+    </div>
+    我是div1
+</div>
+<!--<a href="javascript:void(0);" id="delete">点击我删除子节点div2</a>
+<a href="javascript:void(0);" id="add">点击我增加子节点div3</a>-->
+<input type="button" id="delete" value="点击我删除子节点div2">
+<input type="button" id="add" value="点击我增加子节点div3">
+</body>
+<script>
+    //获取a元素
+    var elementById = document.getElementById("delete");
+    //绑定事件
+    elementById.onclick=fun;
+    //定义函数
+    function fun(){
+        //获得要删除的节点
+        var elementById1 = document.getElementById("div1");
+        var elementById2 = document.getElementById("div2");
+        elementById1.removeChild(elementById2);
+    }
+
+    //获取a元素
+    var elementById3 = document.getElementById("add");
+    //绑定事件
+    elementById3.onclick=fun1;
+    //定义函数
+    function fun1(){
+        //获得要添加子节点的当前节点
+        var elementById1 = document.getElementById("div1");
+        //创建子节点
+        var div3 = document.createElement("div");
+        //给子节点添加属性
+        div3.setAttribute("id","div3");
+        div3.innerHTML="我是div3";
+
+        //将子节点添加到某个节点下面
+        elementById1.appendChild(div3);
+    }
+</script>
+</html>

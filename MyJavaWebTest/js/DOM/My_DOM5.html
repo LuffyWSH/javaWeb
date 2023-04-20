@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>控制元素样式</title>
+    <style>
+        .d2{
+            border: 1px red solid;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    div1
+</div>
+<div id="div2">
+    div2
+</div>
+</body>
+<script>
+    //控制元素样式,法一：
+    //获取元素
+    var element_div1 = document.getElementById("div1");
+    //绑定事件
+    element_div1.onclick=fun;
+    //定义函数
+    function fun(){
+        element_div1.style.border="1px red solid";
+        element_div1.style.fontSize="3px";
+    }
+
+    //控制元素样式,法二：
+    var element_div2 = document.getElementById("div2");
+    //绑定事件
+    element_div2.onclick=fun1;
+    //定义函数
+    function fun1(){
+        element_div2.className="d2";
+    }
+
+
+</script>
+</html>

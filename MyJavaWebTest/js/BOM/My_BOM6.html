@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>history对象</title>
+</head>
+<body>
+<input type="button" value="获取当前窗口历史记录个数" id="button">
+<input type="button" value="跳转到百度" id="button1">
+<input type="button" value="下一步" id="button2">
+<input type="button" value="上一步" id="button3">
+</body>
+<script>
+    //属性，获取当前窗口历史记录个数
+    let elementById = document.getElementById("button");
+    elementById.onclick=fun;
+    function fun(){
+       alert(history.length);
+    }
+
+    //方法
+    let elementById1 = document.getElementById("button1");
+    elementById1.onclick=fun1;
+    function fun1(){
+        location.href="https://www.baidu.com/";
+    }
+
+    let elementById2 = document.getElementById("button2");
+    elementById2.onclick=fun2;
+    function fun2(){
+        history.forward();
+    }
+
+    let elementById3 = document.getElementById("button3");
+    elementById3.onclick=fun3;
+    function fun3(){
+        history.back();
+    }
+
+
+
+</script>
+</html>

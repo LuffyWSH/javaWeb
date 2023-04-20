@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery基本使用</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script>
+        //函数入口（相当于window.onload=function (){}）
+        $(function (){
+            var $div = $("#button");
+
+            //事件绑定
+            $div.click(function (){
+                alert("按钮被点击了.....")
+            })
+
+            //样式控制
+            var $div1 = $("#div1");
+            $div1.css("background","red")
+        })
+    </script>
+</head>
+<body>
+<div id="div1">div1.....</div>
+<div id="div2">div2.....</div>
+<input type="button" id="button" value="按钮">
+
+</body>
+</html>

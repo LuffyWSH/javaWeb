@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>其他类型变成number类型</title>
+</head>
+<body>
+
+
+</body>
+<script>
+    /*
+        * string转number：按照字面值转换。如果字面值不是数字，则转为NaN（不是数字的数字）
+        * boolean转number：true转为1，false转为0
+        * null 转number：null转换为0
+        * undefined 转number：undefined转换为NaN
+     */
+      //字符串变成数字类型
+    var num1 = +"abc";
+    document.write(num1+"&nbsp;&nbsp;&nbsp;"+typeof (num1)+"<br>")  //NaN   number
+    var num2 = +"123"
+    document.write(num2+"&nbsp;&nbsp;&nbsp;"+typeof (num2)+"<br>")  //123   number
+    var num3 = +"123abc"
+    document.write(num3+"&nbsp;&nbsp;&nbsp;"+typeof (num3)+"<br>")  //NaN   number
+
+    //布尔类型转换为number类型
+    var num4 = +false;
+    document.write(num4+"&nbsp;&nbsp;&nbsp;"+typeof (num4)+"<br>")  //0   number
+    var num5 = +true;
+    document.write(num5+"&nbsp;&nbsp;&nbsp;"+typeof (num5)+"<br>")  //1   number
+
+    //Null转换为number
+    var num6 = -null;
+    document.write(num6+"&nbsp;&nbsp;&nbsp;"+typeof (num6)+"<br>")  //0   number
+
+    //undefined转换为number
+    var num7;
+    var num8 = +num7;
+    document.write(num8+"&nbsp;&nbsp;&nbsp;"+typeof (num8)+"<br>")  //NaN   number
+
+</script>
+</html>

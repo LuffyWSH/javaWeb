@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Element对象</title>
+</head>
+<body>
+<a>点击到百度</a>
+<input type="button" id="button" value="给左边链接添加属性">
+<input type="button" id="button2" value="给左边链接删除属性">
+
+</body>
+<script>
+    //获取元素对象
+    let elementById = document.getElementById("button");
+    //绑定事件
+    elementById.onclick=fun;
+    //获取a标签
+    let elementsByTagName = document.getElementsByTagName("a")[0];
+    //定义执行函数
+    function fun(){
+        //一定要注意getElementsByTagName返回的是一个数组，要取第一个
+        elementsByTagName.setAttribute("href","https://www.baidu.com/")
+    }
+
+    //获取元素对象
+    let elementById2 = document.getElementById("button2");
+    //绑定事件
+    elementById2.onclick=fun2;
+    //定义执行函数
+    function fun2(){
+        elementsByTagName.removeAttribute("href");
+    }
+
+</script>
+</html>

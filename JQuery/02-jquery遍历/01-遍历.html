@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../js/jquery-3.3.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        //入口函数
+        $(function (){
+            //获得li(jq对象)
+            var $citys = $("#city li");
+
+            /*//法一：for遍历
+            for (let i = 0; i <$citys.length; i++) {
+                 //$citys[i](js对象)
+                //对其进行业务判断
+                if("上海"==$citys[i].innerHTML){
+                    //break;//结束循环
+                    continue;//结束本次循环
+                }
+                alert(i+":"+$citys[i].innerHTML)
+            }*/
+
+            //法二：jq对象.each(callback)
+            /*
+            $citys.each(function (index,element){
+                //获得对应元素可以用this(js对象)或者是function 的第二个参数(js对象)，第一个参数是索引。（参数代表意义是固定的）
+                //alert(this.innerHTML)
+                //对其进行业务判断
+                if("上海"==element.innerHTML){
+                   // return false;//相当于break
+                    return true;//相当于continue
+                }
+                alert(index+":"+element.innerHTML)
+            })
+            */
+
+            //法三：$.each(object,[callback]) (和第二种方式除了写法不同，其他用法都一样，第二种方式function里写什么第三种方式也写什么)
+            /*
+            $.each($citys,function (index,element){
+                //获得对应元素可以用this(js对象)或者是function 的第二个参数(js对象)，第一个参数是索引。（参数代表意义是固定的）
+                //alert(this.innerHTML)
+                //对其进行业务判断
+                if("上海"==element.innerHTML){
+                    // return false;//相当于break
+                    return true;//相当于continue
+                }
+                alert(index+":"+element.innerHTML)
+            })
+            */
+
+            //法四：for...of(类似于)
+            for(li of $citys){
+                alert(li.innerHTML)
+            }
+
+        })
+
+    </script>
+</head>
+<body>
+<ul id="city">
+    <li>北京</li>
+    <li>上海</li>
+    <li>天津</li>
+    <li>重庆</li>
+</ul>
+</body>
+</html>

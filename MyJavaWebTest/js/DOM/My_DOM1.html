@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document对象</title>
+</head>
+<body>
+<div id="div1">div1</div>
+<div id="div2">div2</div>
+
+<div id="div3">div3</div>
+
+<div class="cls1">div4</div>
+<div class="cls1">div5</div>
+
+<input type="text" name="username">
+</body>
+<script>
+    //1、获取元素
+    //根据id获取文档元素
+    let elementById = document.getElementById("div1");
+    //根据class属性获取元素
+    let elementsByClassName = document.getElementsByClassName("cls1");
+    alert(elementsByClassName.length);
+    //根据name属性获取元素
+    let elementsByName = document.getElementsByName("username");
+    alert(elementsByName.length);
+    //根据元素名获取元素
+    let elementsByTagName = document.getElementsByTagName("div");
+    alert(elementsByTagName.length)
+
+    //2、创建其他对象（如元素，属性，文本，解析）
+    let htmlAnchorElement = document.createElement("a");
+
+</script>
+</html>
